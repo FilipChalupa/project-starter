@@ -39,12 +39,9 @@ module.exports = {
       {
         test: /\.html$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
+          'file-loader?name=[name].[ext]',
+          'extract-loader',
+          'html-loader',
         ],
       },
     ],
